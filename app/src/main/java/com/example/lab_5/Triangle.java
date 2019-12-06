@@ -9,9 +9,10 @@ import java.nio.FloatBuffer;
 public class Triangle {
 
     private final String vertexShaderCode =
+            "uniform mat4 uMVPMatrix;" +
             "attribute vec4 vPosition;" +
                     "void main() {" +
-                    "  gl_Position = vPosition;" +
+                    "  gl_Position = uMVPMatrix*vPosition;" +
                     "}";
 
     private final String fragmentShaderCode =
@@ -25,6 +26,7 @@ public class Triangle {
 
 
     private FloatBuffer vertexBuffer;
+    private int vPMatrixHandle;
     private int positionHandle;
     private int colorHandle;
 
@@ -34,9 +36,9 @@ public class Triangle {
     // number of coordinates per vertex in this array
     static final int COORDS_PER_VERTEX = 3;
     static float triangleCoords[] = {   // in counterclockwise order:
-            0.0f,  0.622008459f, 0.0f, // top
-            -0.5f, -0.311004243f, 0.0f, // bottom left
-            0.5f, -0.311004243f, 0.0f  // bottom right
+            0.0f,  1, 0.0f, // top
+            -1f, -1f, 0.0f, // bottom left
+            1f, -1f, 0.0f  // bottom right
     };
 
     // Set color with red, green, blue and alpha (opacity) values
@@ -75,7 +77,7 @@ public class Triangle {
         GLES20.glLinkProgram(mProgram);
     }
 
-    public void draw() {
+    public void draw(float[] vPMatrix) {
         // Add program to OpenGL ES environment
         GLES20.glUseProgram(mProgram);
 
@@ -95,6 +97,12 @@ public class Triangle {
 
         // Set color for drawing the triangle
         GLES20.glUniform4fv(colorHandle, 1, color, 0);
+
+        // get handle to shape's transformation matrix
+        vPMatrixHandle = GLES20.glGetUniformLocation(mProgram, "uMVPMatrix");
+
+        // Pass the projection and view transformation to the shader
+        GLES20.glUniformMatrix4fv(vPMatrixHandle, 1, false, vPMatrix, 0);
 
         // Draw the triangle
         GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0, vertexCount);
