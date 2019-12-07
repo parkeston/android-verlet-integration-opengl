@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Lab_5</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="environment_settings">Environment settings</string>
+    <string name="max_launch_speed">Max launch speed</string>
+    <string name="drag">Drag</string>
+    <string name="bounce_friction">Bounce friction</string>
+    <string name="acceleration_y">Acceleration Y</string>
+    <string name="acceleration_x">Acceleration X</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="dialogFragment">SettingsDialog</string>
+    <string name="visual_settings">Visual settings</string>
+    <string name="filled">Filled</string>
+    <string name="sticks_visibility">Sticks visibility</string>
+    <string name="sticks_width">Sticks width</string>
+    <string name="point_size">Point size</string>
+    <string name="box_size">Box size</string>
+    <string name="spawn_box">Spawn box</string>
+    <string name="angular_speed">Angular speed</string>
 </resources>

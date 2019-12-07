@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical"
+        tools:context=".settings.SettingsDialog">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/environment_settings"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/spawnBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="@string/spawn_box"
+            android:textSize="20sp" />
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill"
+            android:columnCount="2"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+
+            <TextView
+                android:text="@string/max_launch_speed"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/laucnSpeed"
+                android:ems="10"
+                android:hint="@string/max_launch_speed"
+                android:inputType="numberDecimal|numberSigned"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:text="@string/bounce_friction"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/bounceFriction"
+                android:ems="10"
+                android:hint="@string/bounce_friction"
+                android:inputType="numberDecimal|numberSigned"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:text="@string/drag"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/drag"
+                android:ems="10"
+                android:hint="@string/drag"
+                android:inputType="numberDecimal|numberSigned"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:text="@string/acceleration_x"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/accelerationX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:ems="10"
+                android:hint="@string/acceleration_x"
+                android:inputType="numberDecimal|numberSigned" />
+
+            <TextView
+                android:text="@string/acceleration_y"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/accelerationY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/acceleration_y"
+                android:inputType="numberDecimal|numberSigned"
+                android:textAlignment="center"/>
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/visual_settings"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_gravity="fill">
+
+            <TextView
+                android:text="@string/point_size"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/pointSize"
+                android:ems="10"
+                android:hint="@string/point_size"
+                android:inputType="number"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:text="@string/box_size"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/boxSize"
+                android:ems="10"
+                android:hint="@string/box_size"
+                android:inputType="number"
+                android:textAlignment="center"/>
+
+        </GridLayout>
+
+    </LinearLayout>
+    </ScrollView>
+</FrameLayout>
